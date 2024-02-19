@@ -29,14 +29,15 @@ for(const btn of allBtn){
           sum = convertedTotalCost + parseInt(price);
          if(count > 4){
             alert("you can't buy more.");
-          
             sum = sum - 550;
             return sum;
         }
          setInnerText("total_cost", sum);
+    
          
     })
 }
+
 
 const button = document.getElementById("apply_btn");
 button.addEventListener("click", function(e){
@@ -63,7 +64,13 @@ button.addEventListener("click", function(e){
     }
 });
 
-
+loginForm.addEventListener("input", () =>{
+    if(document.getElementById("name").value.length > 0 && document.getElementById("number").value.length > 0 && document.getElementById("mail").value.length > 0){
+        nextBtn.removeAttribute('disabled');
+    }else{
+        nextBtn.setAttribute('disabled', 'disabled')
+    }
+})
 function setInnerText(id, value){
     document.getElementById(id).innerText = value;
 }

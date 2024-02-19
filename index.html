@@ -176,8 +176,8 @@
                
                 <div class="flex gap-14 space-y-4">
                     <h5 class="flex items-center">A</h5>
-                    <button id="btn" class="btn btn-square">A1</button>
-                    <button id="btn" class="btn btn-square">A2</button>
+                    <button  id="btn" class="btn btn-square">A1</button>
+                    <button  id="btn" class="btn btn-square">A2</button>
                     <button id="btn" class="btn btn-square">A3</button>
                     <button id="btn" class="btn btn-square">A4</button>
                 </div>
@@ -278,23 +278,25 @@
                 <h2 class="font-semibold">BDT <span id="grand_total">0</span></h3>
                </div>
               </div>
+              <form id="loginForm">
                <h1 class="font-bold">Passenger Name*</h1>
                <label class="input input-bordered flex items-center gap-2 w-96">
-                <input type="text" class="grow " placeholder="Name"/>
+                <input id="name" type="text" class="grow " placeholder="Name"/>
               </label>
               <br>
               <h1 class="font-bold">Phone Number*</h1>
               <label class="input input-bordered flex items-center gap-2 w-96">
-                <input type="number" class="grow" placeholder="Number" />
+                <input id="number" type="number" class="grow" placeholder="Number" />
                 </label>
             <br>
             <h1 class="font-bold">Email ID</h1>
             <label class="input input-bordered flex items-center gap-2 w-96">
-                <input type="text" class="grow" placeholder="E-Mail" />
+                <input id="mail" type="text" class="grow" placeholder="E-Mail" />
                 </label>
                 <br>
               <!-- Open the modal using ID.showModal() method -->
-<button class="btn w-96 bg-[green] text-white disabled" onclick="my_modal_1.showModal() ">Next</button>
+<button class="btn w-96 bg-[green] text-white disabled" onclick="my_modal_1.showModal() " id="nextBtn" disabled="disabled">Next</button>
+</form>
 <dialog id="my_modal_1" class="modal">
   <div class="modal-box">
     <h3 class="font-bold text-lg flex justify-center"><img src="./images/success.png" alt="" srcset=""></h3>
