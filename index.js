@@ -37,7 +37,6 @@ for(const btn of allBtn){
 }
 
 
-
 const button = document.getElementById("apply_btn");
 button.addEventListener("click", function(e){
     //get the input
