@@ -27,12 +27,14 @@ for(const btn of allBtn){
          const totalCost = document.getElementById("total_cost").innerText;
          const convertedTotalCost = parseInt(totalCost);
           sum = convertedTotalCost + parseInt(price);
-         if(sum>=2750){
+         if(count > 4){
             alert("you can't buy more.");
-            return;
+          
+            sum = sum - 550;
+            return sum;
         }
          setInnerText("total_cost", sum);
-         btn.setAttribute('disabled', 'true');
+         
     })
 }
 
@@ -41,13 +43,20 @@ button.addEventListener("click", function(e){
     //get the input
     const couponElement = document.getElementById("input_field").value;
     const couponCode = couponElement.split(" ").join("").toLowerCase();
-    if(sum>=2750){
+    if(sum>=2200){
         if(couponCode === "new15"){
             const discount = document.getElementById("grand_total");
             const amount = sum * 0.15;
             discount.innerText = (sum - amount).toFixed(2);
-            document.getElementById("input_field").value="";
-        }else{
+            document.getElementById("input_field").classList.add("hidden")
+            // document.getElementById("input_field").value="";
+        }else if(couponCode === "couple20"){
+            const discount = document.getElementById("grand_total");
+            const amount = sum * 0.2;
+            discount.innerText = (sum - amount).toFixed(2);
+            document.getElementById("input_field").classList.add("hidden")
+        }
+        else{
             alert("invalid coupon")
             document.getElementById("input_field").value="";
         }
