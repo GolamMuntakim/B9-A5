@@ -44,14 +44,13 @@ const button = document.getElementById("apply_btn");
 button.addEventListener("click", function(e){
     //get the input
     const couponElement = document.getElementById("input_field").value;
-    const couponCode = couponElement.split(" ").join("").toLowerCase();
     if(sum>=2200){
-        if(couponCode === "new15" ){
+        if(couponElement === "NEW15" ){
             const discount = document.getElementById("grand_total");
             const amount = sum * 0.15;
             discount.innerText = (sum - amount).toFixed(2);
             document.getElementById("input_field").classList.add("hidden")
-        }else if(couponCode === "couple20"){
+        }else if(couponElement === "Couple 20"){
             const discount = document.getElementById("grand_total");
             const amount = sum * 0.2;
             discount.innerText = (sum - amount).toFixed(2);
