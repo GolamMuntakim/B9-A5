@@ -7,6 +7,9 @@ for(const btn of allBtn){
         // increasing seat count 
         count = count + 1;
         left = left-1;
+        if(left<= 35){
+            allBtn.setAttribute('disabled')
+        }
         setInnerText("seat_count",count)
         setInnerText("left",left)
         e.target.style.background = "green";
