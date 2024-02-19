@@ -32,11 +32,10 @@ for(const btn of allBtn){
             sum = sum - 550;
             return sum;
         }
-         setInnerText("total_cost", sum);
-    
-         
+         setInnerText("total_cost", sum); 
     })
 }
+
 
 
 const button = document.getElementById("apply_btn");
@@ -45,12 +44,11 @@ button.addEventListener("click", function(e){
     const couponElement = document.getElementById("input_field").value;
     const couponCode = couponElement.split(" ").join("").toLowerCase();
     if(sum>=2200){
-        if(couponCode === "new15"){
+        if(couponCode === "new15" ){
             const discount = document.getElementById("grand_total");
             const amount = sum * 0.15;
             discount.innerText = (sum - amount).toFixed(2);
             document.getElementById("input_field").classList.add("hidden")
-            // document.getElementById("input_field").value="";
         }else if(couponCode === "couple20"){
             const discount = document.getElementById("grand_total");
             const amount = sum * 0.2;
@@ -63,6 +61,12 @@ button.addEventListener("click", function(e){
         }
     }
 });
+
+applyBtn.addEventListener("input", ()=>{
+    if(document.getElementById("input_field").value.length >=0){
+        apply_btn.removeAttribute('disabled')
+    }
+})
 
 loginForm.addEventListener("input", () =>{
     if(document.getElementById("name").value.length > 0 && document.getElementById("number").value.length > 0 && document.getElementById("mail").value.length > 0){
