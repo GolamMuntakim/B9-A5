@@ -75,6 +75,10 @@ loginForm.addEventListener("input", () =>{
         nextBtn.setAttribute('disabled', 'disabled')
     }
 })
+const reload = document.getElementById("reload");
+reload.addEventListener("click", ()=>{
+    window.location.reload(true);
+})
 function setInnerText(id, value){
     document.getElementById(id).innerText = value;
 }
